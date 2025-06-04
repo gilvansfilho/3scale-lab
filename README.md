@@ -6,7 +6,7 @@ Para instanciar todas as Applications, AppProjects e etc presentes neste reposit
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: saude-3scale-app-of-apps
+  name: 3scale-app-of-apps
   namespace: openshift-gitops
 spec:
   destination:
@@ -15,7 +15,7 @@ spec:
     server: ''
   source:
     path: .
-    repoURL: 'http://gitlab.saude.rj.gov.br:8081/3scale/gitops/app-of-apps.git'
+    repoURL: 'https://github.com/gilvansfilho/3scale-lab.git'
     targetRevision: HEAD
     directory:
       recurse: true
@@ -23,9 +23,9 @@ spec:
   project: default
   syncPolicy:
     automated:
-      prune: true
+      prune: false
       selfHeal: true
     syncOptions:
-      - Replace=true
+      - Replace=false
       - ApplyOutOfSyncOnly=true
 ```
