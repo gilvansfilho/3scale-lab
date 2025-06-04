@@ -13,7 +13,7 @@ spec:
     server: ''
   source:
     path: 'nprd'
-    repoURL: 'git@github.com:gilvansfilho/3scale-deployment.git'
+    repoURL: 'https://github.com/gilvansfilho/3scale-deployment.git'
     targetRevision: HEAD
   syncPolicy:
     automated:
