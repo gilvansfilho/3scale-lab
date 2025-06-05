@@ -12,10 +12,9 @@ spec:
     name: in-cluster
     server: ''
   source:
-    path: '.'
+    path: 'dev'
     repoURL: 'https://github.com/gilvansfilho/3scale-api.git'
     targetRevision: HEAD
-    helm: {}
   syncPolicy:
     automated:
       prune: true
