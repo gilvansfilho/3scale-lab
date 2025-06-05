@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: 3scale-api-teste-dev
+  namespace: openshift-gitops
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  project: 3scale-gitops
+  destination:
+    namespace: 3scale
+    name: in-cluster
+    server: ''
+  source:
+    path: 'dev'
+    repoURL: 'https://github.com/gilvansfilho/3scale-api.git'
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+    - Replace=false
+    - ApplyOutOfSyncOnly=true
+    - PrunePropagationPolicy=foreground
