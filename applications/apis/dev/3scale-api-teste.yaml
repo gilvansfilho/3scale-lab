@@ -12,7 +12,7 @@ spec:
     name: in-cluster
     server: ''
   source:
-    path: 'dev'
+    path: '.'
     repoURL: 'https://github.com/gilvansfilho/3scale-api.git'
     targetRevision: HEAD
     helm: {}
